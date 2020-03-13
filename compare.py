@@ -60,7 +60,7 @@ def main():
             if(i in a1chr):
                newpeak = "samePeak"   
             print(a2name+" child_peak CHR: "+str(i)+" %: "+str(a2p)+" "+newpeak)
-            outfile.write(a2name+" child_peak CHR: "+str(i)+" %: "+str(a2p)+" "+newpeak)
+            outfile.write(a2name+" child_peak CHR: "+str(i)+" %: "+str(a2p)+" "+newpeak+'\n')
 
 
 
