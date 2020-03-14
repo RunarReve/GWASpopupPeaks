@@ -1,10 +1,12 @@
 #!/bin/sh
 #Loops through all GWASs that was made with HPOscase/HPOsiblingcontrol
 
-rm -f combined
 
+
+#rm -f combined
 for each in $(wc -l output/sib/* | awk '{if($1 > 1){print $2}}' )
 do
+   continue
    echo "${each}"
    string=$(echo "${each}" | sed -e 's/\// /g' | awk '{print $NF}')
    same="x"
@@ -28,3 +30,10 @@ do
    
    echo "${string}" >> combined
 done
+
+
+#Get list of new peaks lists
+cat combined | awk '{if($3 != "x"){print substr ($0, 0,7)}}' > newPeakList
+#cat combined | awk '{if($3 != "x"){print $0}}'
+
+
